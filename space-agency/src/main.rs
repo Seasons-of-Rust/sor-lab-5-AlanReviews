@@ -32,13 +32,9 @@ fn get_candidate_score(c: &Candidate) -> i32 {
 }
 
 fn main() {
-    let mut candidate_score: i32;
     let mut candidates = Candidate::load_candidate_file();
     candidates.sort_by(|a, b| {
         // We want to sort in descending order
         get_candidate_score(b).cmp(&get_candidate_score(a))
-
-        // If we wanted to instead sort with the lowest number first, we could use this instead:
-        // a.cmp(b)
     });
 }
